@@ -1,0 +1,276 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xaml-comp compile="true" ?>
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <!-- Fa Icons -->
+    <x:String x:Key="FaHomeIcon">&#xe81f;</x:String>
+    <x:String x:Key="FaOrdersIcon">&#xe842;</x:String>
+    <x:String x:Key="FaGoalsIcon">&#xf201;</x:String>
+    <x:String x:Key="FaAccountIcon">&#xf2be;</x:String>
+    <x:String x:Key="FaInformationIcon">&#xe839;</x:String>
+    <x:String x:Key="FaLogOutIcon">&#xf190;</x:String>
+    <x:String x:Key="FaPinUbicationIcon">&#xe83b;</x:String>
+    <x:String x:Key="FaCheckCircleIcon">&#xe814;</x:String>
+    <x:String x:Key="FaPersonIcon">&#xf2bd;</x:String>
+    <x:String x:Key="FaArrowRightIcon">&#xf105;</x:String>
+    <x:String x:Key="FaShareIcon">&#xf1e0;</x:String>
+    <x:String x:Key="FaConciergeIcon">&#xe89b;</x:String>
+    <x:String x:Key="FaPhoneIcon">&#xf098;</x:String>
+    <x:String x:Key="FaFilterIcon">&#xf0b0;</x:String>
+    <x:String x:Key="FaCalendarIcon">&#xf133;</x:String>
+    <x:String x:Key="FaSearchIcon">&#xe802;</x:String>
+    <x:String x:Key="FaListIcon">&#xe82b;</x:String>
+    <x:String x:Key="FaWhatsAppIcon">&#xf232;</x:String>
+    <x:String x:Key="FaIdentificationIcon">&#xf2c2;</x:String>
+    <x:String x:Key="FaAddCircleIcon">&#xe81a;</x:String>
+    <x:String x:Key="FaImageIcon">&#xf1c5;</x:String>
+    <x:String x:Key="FaEditIcon">&#xe834;</x:String>
+    <x:String x:Key="FaShoppingCartIcon">&#xe842;</x:String>
+    <x:String x:Key="FaClockIcon">&#xe844;</x:String>
+    <x:String x:Key="FaMoneybagIcon">&#xe85e;</x:String>
+    <x:String x:Key="FaUserNameIcon">&#xe809;</x:String>
+    <x:String x:Key="FaLockIcon">&#xe831;</x:String>
+    <x:String x:Key="FaCommentsIcon">&#xe835;</x:String>
+    <x:String x:Key="FaCancelIcon">&#xe82e;</x:String>
+    <x:String x:Key="FaSendIcon">&#xf1d8;</x:String>
+    <x:String x:Key="FaCameraIcon">&#xe80e;</x:String>
+    <x:String x:Key="FaDownloadIcon">&#xf0ed;</x:String>
+    
+    <!-- Font Images Sources -->
+    <FontImageSource x:Key="DownloadIcon"
+                     FontFamily="Fa-Icons"
+                     Glyph="{StaticResource FaDownloadIcon}"
+                     Color="{AppThemeBinding Dark={StaticResource White}, Light={StaticResource LiveChatColor}}" />
+    
+    <FontImageSource 
+        x:Key="CameraIcon"
+        FontFamily="Fa-Icons"
+        Glyph="{StaticResource FaCameraIcon}"
+        Color="{AppThemeBinding Dark={StaticResource color-secondary}, Light={StaticResource color-secondary}}" />
+
+    <FontImageSource x:Key="SendIcon"
+                     FontFamily="Fa-Icons"
+                     Glyph="{StaticResource FaSendIcon}"
+                     Color="{AppThemeBinding Dark={StaticResource White}, Light={StaticResource LiveChatColor}}" />
+    
+    <FontImageSource x:Key="FileImage"
+                     FontFamily="Fa-Icons"
+                     Glyph="{StaticResource FaImageIcon}"
+                     Color="{AppThemeBinding Dark={StaticResource White}, Light={StaticResource LiveChatColor}}" />
+    
+    <FontImageSource
+        x:Key="HomeIcon"
+        FontFamily="Fa-Icons"
+        Glyph="{StaticResource FaHomeIcon}"
+        Color="{AppThemeBinding Dark={StaticResource color-secondary}, Light={StaticResource color-secondary}}"/>
+
+    <FontImageSource
+        x:Key="OrdersIcon"
+        FontFamily="Fa-Icons"
+        Glyph="{StaticResource FaOrdersIcon}"
+        Color="{AppThemeBinding Dark={StaticResource color-secondary}, Light={StaticResource color-secondary}}"/>
+
+    <FontImageSource
+        x:Key="GoalsIcon"
+        FontFamily="Fa-Icons"
+        Glyph="{StaticResource FaGoalsIcon}"
+        Color="{AppThemeBinding Dark={StaticResource color-secondary}, Light={StaticResource color-secondary}}"/>
+
+    <FontImageSource
+        x:Key="AccountIcon"
+        FontFamily="Fa-Icons"
+        Glyph="{StaticResource FaAccountIcon}"
+        Color="{AppThemeBinding Dark={StaticResource color-secondary}, Light={StaticResource color-secondary}}"/>
+    
+    <FontImageSource x:Key="ChatIcon"
+                     FontFamily="Fa-Icons"
+                     Glyph="{StaticResource FaCommentsIcon}"
+                     Color="{AppThemeBinding Dark={StaticResource color-secondary}, Light={StaticResource color-secondary}}" />
+    
+    <FontImageSource
+        x:Key="InformationIcon"
+        FontFamily="Fa-Icons"
+        Glyph="{StaticResource FaInformationIcon}"
+        Color="{AppThemeBinding Dark={StaticResource color-secondary}, Light={StaticResource color-secondary}}"/>
+
+    <FontImageSource
+        x:Key="LogOutIcon"
+        FontFamily="Fa-Icons"
+        Glyph="{StaticResource FaLogOutIcon}"
+        Color="{AppThemeBinding Dark={StaticResource color-secondary}, Light={StaticResource color-secondary}}"/>
+
+    <FontImageSource
+        x:Key="PinUbicationIcon"
+        FontFamily="Fa-Icons"
+        Glyph="{StaticResource FaPinUbicationIcon}"
+        Color="{AppThemeBinding Dark={StaticResource color-secondary}, Light={StaticResource Gray500}}"/>
+
+    <FontImageSource
+        x:Key="PinUbicationWhiteIcon"
+        FontFamily="Fa-Icons"
+        Glyph="{StaticResource FaPinUbicationIcon}"
+        Color="{AppThemeBinding Dark={StaticResource color-secondary}, Light={StaticResource White}}"/>
+
+    <FontImageSource
+        x:Key="ButtonUbicationWhiteIcon"
+        FontFamily="Fa-Icons"
+        Glyph="{StaticResource FaPinUbicationIcon}"
+        Color="{AppThemeBinding Dark={StaticResource White}, Light={StaticResource White}}"/>
+    
+    <FontImageSource x:Key="ButtonAddIcon"
+                     FontFamily="Fa-Icons"
+                     Glyph="{StaticResource FaAddCircleIcon}"
+                     Color="{AppThemeBinding Dark={StaticResource color-secondary}, Light={StaticResource White}}" />
+    
+    <FontImageSource
+        x:Key="CheckCircleIcon"
+        FontFamily="Fa-Icons"
+        Glyph="{StaticResource FaCheckCircleIcon}"
+        Color="{AppThemeBinding Dark={StaticResource color-secondary}, Light={StaticResource White}}"/>
+
+    <FontImageSource
+        x:Key="ButtonCheckCircleIcon"
+        FontFamily="Fa-Icons"
+        Glyph="{StaticResource FaCheckCircleIcon}"
+        Color="{AppThemeBinding Dark={StaticResource White}, Light={StaticResource White}}"/>
+
+    <FontImageSource
+        x:Key="PersonIcon"
+        FontFamily="Fa-Icons"
+        Glyph="{StaticResource FaPersonIcon}"
+        Color="{AppThemeBinding Dark={StaticResource color-secondary}, Light={StaticResource Gray500}}"/>
+
+    <FontImageSource
+        x:Key="ArrowRightIcon"
+        FontFamily="Fa-Icons"
+        Glyph="{StaticResource FaArrowRightIcon}"
+        Color="{AppThemeBinding Dark={StaticResource color-secondary}, Light={StaticResource Gray500}}"/>
+
+    <FontImageSource
+        x:Key="ShareIcon"
+        FontFamily="Fa-Icons"
+        Glyph="{StaticResource FaShareIcon}"
+        Color="{AppThemeBinding Dark={StaticResource White}, Light={StaticResource White}}"/>
+
+    <FontImageSource
+        x:Key="ConciergeIcon"
+        FontFamily="Fa-Icons"
+        Glyph="{StaticResource FaConciergeIcon}"
+        Color="{AppThemeBinding Dark={StaticResource color-secondary}, Light={StaticResource Gray500}}"/>
+
+    <FontImageSource
+        x:Key="UserIcon"
+        FontFamily="Fa-Icons"
+        Glyph="{StaticResource FaAccountIcon}"
+        Color="{AppThemeBinding Dark={StaticResource color-secondary}, Light={StaticResource Gray500}}"/>
+
+    <FontImageSource
+        x:Key="PhoneIcon"
+        FontFamily="Fa-Icons"
+        Glyph="{StaticResource FaPhoneIcon}"
+        Color="{AppThemeBinding Dark={StaticResource color-secondary}, Light={StaticResource Gray500}}"/>
+
+    <FontImageSource
+        x:Key="PhoneBlueIcon"
+        FontFamily="Fa-Icons"
+        Glyph="{StaticResource FaPhoneIcon}"
+        Color="{AppThemeBinding Dark={StaticResource color-secondary}, Light={StaticResource color-secondary}}"/>
+
+    <FontImageSource
+        x:Key="EditIcon"
+        FontFamily="Fa-Icons"
+        Glyph="{StaticResource FaEditIcon}"
+        Color="{AppThemeBinding Dark={StaticResource color-secondary}, Light={StaticResource color-secondary}}"/>
+
+    <FontImageSource
+        x:Key="FilterIcon"
+        FontFamily="Fa-Icons"
+        Glyph="{StaticResource FaFilterIcon}"
+        Color="{AppThemeBinding Dark={StaticResource color-secondary}, Light={StaticResource Gray500}}"/>
+
+    <FontImageSource
+        x:Key="CalendarIcon"
+        FontFamily="Fa-Icons"
+        Glyph="{StaticResource FaCalendarIcon}"
+        Color="{AppThemeBinding Dark={StaticResource color-secondary}, Light={StaticResource Gray500}}"/>
+
+    <FontImageSource
+        x:Key="SearchIcon"
+        FontFamily="Fa-Icons"
+        Glyph="{StaticResource FaSearchIcon}"
+        Color="{AppThemeBinding Dark={StaticResource color-secondary}, Light={StaticResource Gray500}}"/>
+
+    <FontImageSource
+        x:Key="ListIcon"
+        FontFamily="Fa-Icons"
+        Glyph="{StaticResource FaListIcon}"
+        Color="{AppThemeBinding Dark={StaticResource color-secondary}, Light={StaticResource Gray500}}"/>
+
+    <FontImageSource
+        x:Key="IdentificationIcon"
+        FontFamily="Fa-Icons"
+        Glyph="{StaticResource FaIdentificationIcon}"
+        Color="{AppThemeBinding Dark={StaticResource color-secondary}, Light={StaticResource Gray500}}"/>
+
+    <FontImageSource
+        x:Key="WhatsAppIcon"
+        FontFamily="Fa-Icons"
+        Glyph="{StaticResource FaWhatsAppIcon}"
+        Color="{AppThemeBinding Dark={StaticResource DarkGreenColor}, Light={StaticResource DarkGreenColor}}"/>
+
+    <FontImageSource
+        x:Key="AddCircleIcon"
+        FontFamily="Fa-Icons"
+        Glyph="{StaticResource FaAddCircleIcon}"
+        Color="{AppThemeBinding Dark={StaticResource color-secondary}, Light={StaticResource Gray500}}"/>
+
+    <FontImageSource
+        x:Key="ImageIcon"
+        FontFamily="Fa-Icons"
+        Glyph="{StaticResource FaImageIcon}"
+        Color="{AppThemeBinding Dark={StaticResource color-secondary}, Light={StaticResource Gray500}}"/>
+
+    <FontImageSource
+        x:Key="ShoppingCartIcon"
+        FontFamily="Fa-Icons"
+        Glyph="{StaticResource FaShoppingCartIcon}"
+        Color="{AppThemeBinding Dark={StaticResource color-secondary}, Light={StaticResource color-secondary}}"/>
+
+    <FontImageSource
+        x:Key="ClockIcon"
+        FontFamily="Fa-Icons"
+        Glyph="{StaticResource FaClockIcon}"
+        Color="{AppThemeBinding Dark={StaticResource color-secondary}, Light={StaticResource color-secondary}}"/>
+
+    <FontImageSource
+        x:Key="MoneybagIcon"
+        FontFamily="Fa-Icons"
+        Glyph="{StaticResource FaMoneybagIcon}"
+        Color="{AppThemeBinding Dark={StaticResource color-secondary}, Light={StaticResource color-secondary}}"/>
+
+    <FontImageSource
+        x:Key="UserNameIcon"
+        FontFamily="Fa-Icons"
+        Glyph="{StaticResource FaUserNameIcon}"
+        Color="{AppThemeBinding Dark={StaticResource color-secondary}, Light={StaticResource Gray500}}"/>
+
+    <FontImageSource
+        x:Key="LockIcon"
+        FontFamily="Fa-Icons"
+        Glyph="{StaticResource FaLockIcon}"
+        Color="{AppThemeBinding Dark={StaticResource color-secondary}, Light={StaticResource Gray500}}"/>
+
+    <FontImageSource
+        x:Key="CommentsIcon"
+        FontFamily="Fa-Icons"
+        Glyph="{StaticResource FaCommentsIcon}"
+        Color="{AppThemeBinding Dark={StaticResource color-secondary}, Light={StaticResource Gray500}}"/>
+
+    <FontImageSource
+        x:Key="CancelIcon"
+        FontFamily="Fa-Icons"
+        Glyph="{StaticResource FaCancelIcon}"
+        Color="{AppThemeBinding Dark={StaticResource color-secondary}, Light={StaticResource Gray500}}"/>
+</ResourceDictionary>

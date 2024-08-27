@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="SupportDesk.App.Views.Base.PageBase"
+    xmlns:ios="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.iOSSpecific;assembly=Microsoft.Maui.Controls"
+    ios:Page.PrefersHomeIndicatorAutoHidden="true"
+    xmlns:basecontrols="clr-namespace:SupportDesk.App.Controls.Common"
+    xmlns:mct="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+    HideSoftInputOnTapped="true">
+
+    <ContentPage.Behaviors>
+        <mct:StatusBarBehavior StatusBarColor="{AppThemeBinding Light={StaticResource color-secondary}, Dark={StaticResource Gray900}}"/>
+    </ContentPage.Behaviors>
+
+    <Shell.TitleView>
+        <Grid>
+            <Image
+                Source="suppordesklogo.png"
+                HeightRequest="30"
+                Margin="-70,0,0,0"/>
+        </Grid>
+    </Shell.TitleView>
+
+    <Grid
+        IgnoreSafeArea="True">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <!-- Error Indicator -->
+        <basecontrols:ErrorIndicator
+            IsError="{Binding IsErrorState, Mode=OneWay}"
+            ErrorImage="{Binding ErrorImage, Mode=OneWay}"
+            ErrorText="{Binding ErrorMessage, Mode=OneWay}"
+            RetryInitializeCommand="{Binding RetryInitializeCommand}"
+            VerticalOptions="Center"
+            HorizontalOptions="Center" />
+
+        <!-- Initializing Indicator -->
+        <basecontrols:LoadingIndicator
+            IsBusy="{Binding Initializing, Mode=OneWay}"
+            LoadingText="{Binding InitializingLoadingText, Mode=OneWay}"
+            HorizontalOptions="Center"
+            VerticalOptions="Center" />
+
+        <!-- Grid to contain Page Content -->
+        <!--Mostrar el contenido de la vista solo si:
+        IsInitialized es true
+        Initializing es false
+        IsError es false-->
+        <!--IsVisible="{Binding IsErrorState, Converter={StaticResource InvertedBoolConverter}}"-->
+        <Grid
+            x:Name="PageContentGrid"
+            IgnoreSafeArea="True">
+            <Grid.IsVisible>
+                <MultiBinding Converter="{StaticResource AllTrueConverter}">
+                    <Binding Path="IsErrorState" Converter="{StaticResource InvertedBoolConverter}"/>
+                    <Binding Path="Initializing" Converter="{StaticResource InvertedBoolConverter}"/>
+                    <Binding Path="IsInitialized"/>
+                </MultiBinding>
+            </Grid.IsVisible>
+        </Grid>
+
+    </Grid>
+</ContentPage>

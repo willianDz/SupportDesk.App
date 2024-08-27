@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:sys="clr-namespace:System;assembly=netstandard"
+    x:Class="SupportDesk.App.Controls.FlyoutFooter">
+
+    <StackLayout
+        BackgroundColor="{AppThemeBinding  Light={StaticResource color-secondary}, Dark={StaticResource Gray900}}"
+        Padding="10">
+
+        <Label
+            Text="{Binding Source={x:Static sys:DateTime.Now}, StringFormat='© {0:yyyy} Súper Farmacia Simán S. A.'}"
+            TextColor="White"
+            HorizontalOptions="Center"
+            FontSize="Micro"/>
+
+        <Label
+            Text="Todos los derechos reservados."
+            TextColor="White"
+            HorizontalOptions="Center"
+            FontSize="Micro"/>
+
+    </StackLayout>
+</ContentView>

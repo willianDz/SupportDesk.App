@@ -4,12 +4,50 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:SupportDesk.App"
-    Shell.FlyoutBehavior="Disabled"
-    Title="SupportDesk.App">
+    xmlns:views="clr-namespace:SupportDesk.App.Views"
+    xmlns:controls="clr-namespace:SupportDesk.App.Controls"
+    xmlns:mct="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+    FlyoutBackgroundColor="{AppThemeBinding Light={StaticResource White},  Dark={StaticResource Gray900}}">
 
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+    <Shell.FlyoutHeader>
+        <controls:FlyoutHeader />
+    </Shell.FlyoutHeader>
+    <Shell.FlyoutFooter>
+        <controls:FlyoutFooter />
+    </Shell.FlyoutFooter>
+
+    <ShellContent Route="LoginView"
+              FlyoutItemIsVisible="False"
+              ContentTemplate="{DataTemplate views:LoginView}" />
+
+    <ShellContent Route="VerifyTwoFactorAuthenticationView"
+          FlyoutItemIsVisible="False"
+          ContentTemplate="{DataTemplate views:VerifyTwoFactorAuthenticationView}" />
+
+    <FlyoutItem Route="Main"
+            FlyoutDisplayOptions="AsMultipleItems">
+
+        <ShellContent Route="HomeView"
+                  Title="Inicio"
+                  ContentTemplate="{DataTemplate views:HomeView}"
+                  Icon="{StaticResource HomeIcon}" />
+
+        <!--<ShellContent Route="OrdersView"
+                  Title="Solicitudes"
+                  ContentTemplate="{DataTemplate views:HomeView}"
+                  Icon="{StaticResource OrdersIcon}" />
+
+        <ShellContent Title="Perfil"
+                  ContentTemplate="{DataTemplate views:HomeView}"
+                  Icon="{StaticResource AccountIcon}" />-->
+    </FlyoutItem>
+
+    <MenuItem Text="Información de la aplicación"
+          Command="{Binding AboutAppCommand}"
+          IconImageSource="{StaticResource InformationIcon}" />
+
+    <MenuItem Text="Cerrar sesión"
+          Command="{Binding LogOutCommand}"
+          IconImageSource="{StaticResource LogOutIcon}" />
 
 </Shell>

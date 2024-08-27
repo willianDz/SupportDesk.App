@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<viewBase:ContentPageBase
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="SupportDesk.App.Views.HomeView"
+    xmlns:viewBase="clr-namespace:SupportDesk.App.Views.Base"
+    xmlns:viewModels="clr-namespace:SupportDesk.App.ViewModels"
+    x:DataType="viewModels:HomeViewModel"
+    Title="Inicio">
+    <viewBase:ContentPageBase.PageContent>
+
+        <RefreshView
+            Grid.Row="1"
+            Command="{Binding RefreshCommand}"
+            IsRefreshing="{Binding IsRefreshing}"
+            IsVisible="{Binding IsBusy, Converter={StaticResource InvertedBoolConverter}}">
+
+            <ScrollView>
+
+                <VerticalStackLayout Margin="20">
+
+                    <Label
+                        Text="Hola,"
+                        FontSize="18"/>
+
+                    <Label
+                        Text="{Binding UserInfo.FirstName}"
+                        StyleClass="Text-Title"/>
+
+                    <Label
+                        Text="Resumen de este mes"
+                        FontSize="18"
+                        FontFamily="LatoBold"
+                        Margin="0,20,0,0"/>
+
+                    <Frame StyleClass="Card">
+
+                        <Grid
+                            RowSpacing="5"
+                            ColumnSpacing="5">
+
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="5"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width=".1*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <BoxView
+                                Grid.RowSpan="2"
+                                StyleClass="Border-Primary-w3"/>
+
+                            <Label
+                                Grid.Column="1"
+                                Text="{Binding UserSummary.TotalRequests,
+                                StringFormat='Solicitudes ingresadas: {0}'}"
+                                StyleClass="Font-Bold, Font-LatoBold"/>
+
+                            <Label
+                                Grid.Row="1"
+                                Grid.Column="1"
+                                Text="{Binding UserSummary.PendingRequests,
+                                StringFormat='Pendientes: {0} solicitudes'}"
+                                StyleClass="Text-Muted, Font-Bold"
+                                FontSize="12" />
+
+
+                            <Image
+                                Source="{StaticResource FaCheckCircleIcon}"
+                                Grid.RowSpan="2"
+                                Grid.Column="2"/>
+                        </Grid>
+                    </Frame>
+
+                    <Frame StyleClass="Card">
+
+                        <Grid
+                            RowSpacing="5"
+                            ColumnSpacing="5">
+
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="5"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width=".1*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <BoxView
+                                Grid.RowSpan="2"
+                                StyleClass="Border-Primary-w3" />
+
+                            <Label
+                                Grid.Column="1"
+                                Text="{Binding UserSummary.ApprovedRequests,
+                                StringFormat='Solicitudes aprobadas: {0}'}"
+                                StyleClass="Font-Bold, Font-LatoBold"/>
+
+                            <Label
+                                Grid.Row="1"
+                                Grid.Column="1"
+                                Text="{Binding UserSummary.RejectedRequests,
+                                StringFormat='Solicitudes rechazadas: {0}'}"
+                                StyleClass="Text-Muted, Font-Bold"
+                                FontSize="12"/>
+
+
+                            <Image
+                                Source="{StaticResource FaCheckCircleIcon}"
+                                Grid.RowSpan="2"
+                                Grid.Column="2"/>
+                        </Grid>
+                    </Frame>
+
+                </VerticalStackLayout>
+            </ScrollView>
+        </RefreshView>
+    </viewBase:ContentPageBase.PageContent>
+</viewBase:ContentPageBase>

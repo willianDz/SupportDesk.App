@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="SupportDesk.App.Views.VerifyTwoFactorAuthenticationView"
+    x:DataType="viewmodels:VerifyTwoFactorAuthenticationViewModel"
+    xmlns:triggers="clr-namespace:SupportDesk.App.Triggers;assembly=SupportDesk.App"
+    xmlns:mct="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+    xmlns:viewmodels="clr-namespace:SupportDesk.App.ViewModels"
+    xmlns:componente="clr-namespace:SupportDesk.App.Triggers;assembly=SupportDesk.App"
+    Shell.FlyoutBehavior="Disabled"
+    Shell.NavBarIsVisible="False"
+    Shell.TabBarIsVisible="False"
+    HideSoftInputOnTapped="true"
+    BackgroundColor="{AppThemeBinding Light={StaticResource color-secondary}, Dark={StaticResource DarkBackgroundColor}}">
+
+    <ContentPage.Behaviors>
+        <mct:StatusBarBehavior StatusBarColor="{AppThemeBinding  Light={StaticResource color-secondary}, Dark={StaticResource Gray900}}"/>
+    </ContentPage.Behaviors>
+
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30,50"
+            VerticalOptions="FillAndExpand">
+
+            <Image
+                Source="suppordesklogo.png"
+                Aspect="AspectFit"
+                HeightRequest="70"
+                HorizontalOptions="CenterAndExpand"
+                VerticalOptions="StartAndExpand"/>
+
+            <VerticalStackLayout
+                Spacing="10"
+                Margin="0,0,0,20">
+                <Label
+                    Text="Verificación de auténticación de doble factor"
+                    FontSize="Large"
+                    TextColor="{StaticResource White}"
+                    HorizontalTextAlignment="Center" />
+                <Label
+                    Text="Le hemos enviamos un código de verificación el cual debe ingresar a continuación"
+                    FontSize="Small"
+                    TextColor="{StaticResource White}"
+                    HorizontalTextAlignment="Center" />
+            </VerticalStackLayout>
+
+            <Border
+                Padding="5,0"
+                BackgroundColor="{StaticResource White}"
+                StrokeShape="RoundRectangle 20">
+
+                <Grid
+                    ColumnDefinitions="20,*"
+                    ColumnSpacing="5">
+
+                    <Image
+                        Source="{StaticResource LockIcon}"
+                        HeightRequest="22"/>
+
+                    <Entry
+                        Text="{Binding TwoFactorCode.Value, Mode=TwoWay}"
+                        TextColor="Black"
+                        Grid.Column="1"
+                        Placeholder="Ingrese el código"
+                        Keyboard="Default">
+                        <Entry.Behaviors>
+                            <mct:EventToCommandBehavior
+			                    EventName="TextChanged"
+			                    Command="{Binding ValidateCommand}" />
+                        </Entry.Behaviors>
+                    </Entry>
+                </Grid>
+            </Border>
+
+            <Label
+			    Text="{Binding TwoFactorCode.Errors,
+                       Converter={StaticResource FirstValidationErrorConverter}}"
+                Style="{StaticResource ValidationErrorLabelStyle}"
+                FontAttributes="Bold"
+                Margin="0,-20,0,10"
+                IsVisible="{Binding TwoFactorCode.IsValid, Converter={StaticResource InvertedBoolConverter}}"/>
+
+            <ActivityIndicator
+                IsRunning="{Binding IsBusy}"
+                IsVisible="{Binding IsBusy}"
+                Color="{StaticResource White}"/>
+
+            <Button
+                Text="Iniciar sesión"
+                HorizontalOptions="Center"
+                BackgroundColor="{StaticResource WhiteSmokeColor}"
+                TextColor="Black"
+                WidthRequest="200"
+                CornerRadius="20"
+                Command="{Binding VerifyCodeCommand}"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

@@ -1,14 +1,31 @@
 ﻿<?xml version = "1.0" encoding = "UTF-8" ?>
-<Application xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:SupportDesk.App"
-             x:Class="SupportDesk.App.App">
+<Application 
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:SupportDesk.App"
+    x:Class="SupportDesk.App.App"
+    xmlns:converters="clr-namespace:SupportDesk.App.Converters;assembly=SupportDesk.App"
+    xmlns:mct="http://schemas.microsoft.com/dotnet/2022/maui/toolkit">
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Resources/Styles/Colors.xaml" />
                 <ResourceDictionary Source="Resources/Styles/Styles.xaml" />
+                <ResourceDictionary Source="Resources/Styles/IconsResourceDictionary.xaml" />
             </ResourceDictionary.MergedDictionaries>
+
+            <!--  CONVERTERS  -->
+            <mct:MultiBindingCondition x:Key="MultiBindingCondition" />
+            <mct:InvertedBoolConverter x:Key="InvertedBoolConverter" />
+            <converters:HasCountConverter x:Key="HasCountConverter" />
+            <mct:VariableMultiValueConverter x:Key="AllTrueConverter" ConditionType="All" />
+            <converters:RelativeDateTimeConverter x:Key="RelativeDateTimeConverter" />
+            <converters:TextInitialsConverter x:Key="TextInitialsConverter" />
+            <converters:HasTextValueConverter x:Key="HasTextValueConverter" />
+            <converters:ComparisonConverter x:Key="ComparisonConverter" />
+            <converters:FirstValidationErrorConverter x:Key="FirstValidationErrorConverter" />
+            <x:String x:Key="DateTimeFormat">{0:dd MMMM yyyy}</x:String>
+            <x:String x:Key="DateTimeWithHourFormat">{0:dd MMMM yyyy h:mm tt}</x:String>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="SupportDesk.App.Controls.DateRange"
+    xmlns:mct="http://schemas.microsoft.com/dotnet/2022/maui/toolkit">
+    <Border
+        HorizontalOptions="FillAndExpand"
+        StrokeThickness="0"
+        BackgroundColor="{AppThemeBinding Light={StaticResource Gray200}, Dark={StaticResource White}}"
+        Padding="8"
+        StrokeShape="RoundRectangle 10">
+        <VerticalStackLayout>
+
+            <HorizontalStackLayout
+                x:Name="ContainerFilters"
+                Spacing="10">
+
+                <Image Source="{StaticResource ListIcon}"/>
+
+                <Picker
+                    x:Name="pickerDateRangeFilters"
+                    Title="Seleccionar filtro por fecha"
+                    SelectedIndexChanged="pickerDateRangeFilters_SelectedIndexChanged"
+                    TextColor="Black"
+                    FontAttributes="Bold"
+                    FontFamily="LatoBold"
+                    HorizontalOptions="FillAndExpand"
+                    HorizontalTextAlignment="Start"/>
+
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout
+                x:Name="ContainerCustomRange"
+                Grid.Column="1">
+
+                <Image
+                    Source="{StaticResource CalendarIcon}"/>
+
+                <DatePicker
+                    x:Name="dpStartDate"
+                    DateSelected="startDate_DateSelected"
+                    TextColor="Black"/>
+
+                <Label
+                    Text="-"
+                    VerticalOptions="Center"
+                    Margin="20,0" 
+                    TextColor="Black"/>
+
+                <Image
+                    Source="{StaticResource CalendarIcon}"/>
+
+                <DatePicker
+                    x:Name="dpEndDate"
+                    DateSelected="endDate_DateSelected"
+                    TextColor="Black"/>
+
+                <ImageButton
+                    x:Name="BtnHideCustomRangePickers"
+                    Clicked="BtnHideCustomRangePickers_Clicked"
+                    Source="{StaticResource CancelIcon}"
+                    HeightRequest="22"
+                    Margin="15,0,0,0"/>
+            </HorizontalStackLayout>
+
+        </VerticalStackLayout>
+    </Border>
+</ContentView>
