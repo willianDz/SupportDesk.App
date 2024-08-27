@@ -33,13 +33,7 @@ namespace SupportDesk.App
 
         private static void InitializeRouting()
         {
-            //Routing.RegisterRoute(nameof(RequestPermissionsView), typeof(RequestPermissionsView));
-            //Routing.RegisterRoute(nameof(OrderDetailView), typeof(OrderDetailView));
-            //Routing.RegisterRoute(nameof(SignatureView), typeof(SignatureView));
             Routing.RegisterRoute(nameof(AboutAppView), typeof(AboutAppView));
-            //Routing.RegisterRoute(nameof(CameraAppView), typeof(CameraAppView));
-            //Routing.RegisterRoute(nameof(OrdersView), typeof(OrdersView));
-            //Routing.RegisterRoute(nameof(NavigationView), typeof(NavigationView));
         }
     }
 }

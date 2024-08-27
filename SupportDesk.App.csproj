@@ -84,6 +84,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Update="Views\AccountView.xaml.cs">
+	    <DependentUpon>AccountView.xaml</DependentUpon>
+	  </Compile>
 	  <Compile Update="Views\VerifyTwoFactorAuthenticationView.xaml.cs">
 	    <DependentUpon>VerifyTwoFactorAuthenticationView.xaml</DependentUpon>
 	  </Compile>
@@ -117,10 +120,16 @@
 	  <MauiXaml Update="Views\AboutAppView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Views\AccountView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\Base\PageBase.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\HomeView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\RequestsView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\VerifyTwoFactorAuthenticationView.xaml">

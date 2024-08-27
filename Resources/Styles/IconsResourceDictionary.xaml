@@ -69,7 +69,7 @@
     <FontImageSource
         x:Key="OrdersIcon"
         FontFamily="Fa-Icons"
-        Glyph="{StaticResource FaOrdersIcon}"
+        Glyph="{StaticResource FaListIcon}"
         Color="{AppThemeBinding Dark={StaticResource color-secondary}, Light={StaticResource color-secondary}}"/>
 
     <FontImageSource

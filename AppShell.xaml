@@ -32,14 +32,14 @@
                   ContentTemplate="{DataTemplate views:HomeView}"
                   Icon="{StaticResource HomeIcon}" />
 
-        <!--<ShellContent Route="OrdersView"
+        <ShellContent Route="RequestsView"
                   Title="Solicitudes"
-                  ContentTemplate="{DataTemplate views:HomeView}"
+                  ContentTemplate="{DataTemplate views:RequestsView}"
                   Icon="{StaticResource OrdersIcon}" />
 
         <ShellContent Title="Perfil"
-                  ContentTemplate="{DataTemplate views:HomeView}"
-                  Icon="{StaticResource AccountIcon}" />-->
+                  ContentTemplate="{DataTemplate views:AccountView}"
+                  Icon="{StaticResource AccountIcon}" />
     </FlyoutItem>
 
     <MenuItem Text="Información de la aplicación"
